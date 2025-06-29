@@ -1,42 +1,57 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+*{
+  margin: 0%;
+  padding: 0%;
+}
+body{
+  background-color: black;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* Apply theme to all links, headings, etc. */
+
+body.light-theme{
+  background-color: white;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body.light-theme a {
+  color: #006977;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body.dark-theme a {
+  color: #ffffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+body.dark-theme h1 {
+  color: #00ffff;
 }
 
-.card {
-  padding: 2em;
+body.light-theme h1 {
+  color: #006977;
 }
 
-.read-the-docs {
-  color: #888;
+
+body.dark-theme h3 {
+  color: white;
+}
+
+body.light-theme h3 {
+  color: black;
+}
+
+
+body.dark-theme p {
+  color: white;
+}
+
+body.light-theme p {
+  color: black;
+}
+
+
+
+/* optional */
+body.light-theme .navbar {
+  background: linear-gradient(90deg, #d0e7f6, #f2f2f2);
+}
+
+body.dark-theme .navbar {
+  background: linear-gradient(90deg, #0f1b2a, #1a1f2b);
 }

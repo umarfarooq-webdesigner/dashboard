@@ -1,0 +1,190 @@
+/* Root and Theme Classes */
+:root {
+  --clr-dark-bg: #0f1b2a;
+  --clr-dark-bg2: #1a1f2b;
+  --clr-accent: #006977;
+  --clr-accent-hover: #00ffff;
+  --clr-white: #dfdfdf;
+  --clr-black: #111111;
+  --red: #d20000;
+}
+
+/* Navbar Layout */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1002;
+  background: linear-gradient(90deg, var(--clr-dark-bg), var(--clr-dark-bg2));
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.navbar-logo {
+  font-weight: bold;
+  color: var(--clr-white);
+  font-size: 1.3rem;
+  animation: glowBlink 1.8s infinite ease-in-out;
+}
+@keyframes glowBlink {
+  0% {
+    text-shadow: 0 0 5px var(--clr-accent);
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 20px var(--clr-accent);
+    opacity: 0.8;
+  }
+  100% {
+    text-shadow: 0 0 5px var(--clr-accent);
+    opacity: 1;
+  }
+}
+
+/* Menu */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+.navbar-menu li a {
+  text-decoration: none;
+  color: var(--clr-white);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s ease-in-out;
+}
+.navbar-menu li a .icon {
+  font-size: 1.5rem;
+}
+.navbar-menu li a:hover {
+  color: var(--clr-accent-hover);
+  text-shadow: 0 0 10px var(--clr-accent-hover);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  font-size: 1.5rem;
+  color: var(--clr-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+.theme-toggle:hover {
+  color: var(--clr-accent-hover);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--clr-white);
+  cursor: pointer;
+  z-index: 1003;
+}
+.hamburger.open {
+  color: red;
+}
+
+/* Mobile Icons Wrapper */
+.navbar-icons-mobile {
+  display: none;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Hide Theme Icon in Menu on Desktop */
+.theme-toggle-desktop {
+  display: block;
+}
+
+
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    height: calc(100vh - 70px);
+    width: 60%;
+    background: var(--clr-dark-bg);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    gap: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out;
+    z-index: 1000;
+  }
+
+body.light-theme .navbar-menu {
+     background: var(--clr-white);
+}
+
+  .navbar-menu.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-menu li {
+    width: 100%;
+  }
+
+  .navbar-menu li a {
+    justify-content: center;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(to right, var(--clr-dark-bg), var(--clr-dark-bg2));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  body.light-theme   .navbar-menu li a {
+    /* background: linear-gradient(to right, var(--clr-dark-bg), var(--clr-dark-bg2)); */
+    background: var(--clr-white);
+    border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+
+  }
+
+
+  .navbar-menu li a:hover {
+    background: linear-gradient(to right, var(--clr-accent), var(--clr-dark-bg));
+  }
+
+  .navbar-icons-mobile {
+    display: flex;
+  }
+
+  .theme-toggle-desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .navbar-menu {
+    width: 100%;
+  }
+}
+
+
