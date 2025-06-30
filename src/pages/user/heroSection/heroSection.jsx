@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react"; 
 import Navbar from "../../../components/navbar/navbar";
 import "./heroSection.css";
-import { umarfarooq_profile_pic2 } from "../../../assets/images/images_index";
+import {
+  umarfarooq_profile_pic2,
+  umarfarooq_profile_pic3,
+} from "../../../assets/images/images_index";
 
 const HeroSection = () => {
+  const [isLightTheme, setIsLightTheme] = useState(false);
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsLightTheme(document.body.classList.contains("light-theme"));
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    // Set initial theme
+    setIsLightTheme(document.body.classList.contains("light-theme"));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -78,7 +99,9 @@ const HeroSection = () => {
               </code>
             </div>
             <img
-              src={umarfarooq_profile_pic2}
+              src={
+                isLightTheme ? umarfarooq_profile_pic3 : umarfarooq_profile_pic2
+              }
               alt="Developer"
               className="hero-image"
             />
