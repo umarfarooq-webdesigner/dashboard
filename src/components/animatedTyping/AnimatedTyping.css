@@ -1,0 +1,34 @@
+.animated-typing {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+}
+body.light-theme .animated-typing{
+  color: black;
+}
+body.dark-theme .animated-typing{
+  color: white;
+}
+
+
+
+.cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 1s step-start infinite;
+}
+body.light-theme .cursor {
+  color: var(--dark_teal_shade);
+}
+
+body.dark-theme .cursor {
+  color: var(--aqua);
+}
+
+
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

@@ -1,12 +1,16 @@
-import React from 'react'
-import HeroSection from './heroSection/heroSection'
+import React from "react";
+import Navbar from "../../components/navbar/navbar";
+import HeroSection from "./heroSection/heroSection";
+import ServicesSection from "./serviceSection/ServicesSection";
 
 const AllSectionConnecter = () => {
   return (
     <div>
-      < HeroSection />
+      <Navbar />
+      <HeroSection />
+      <ServicesSection />
     </div>
-  )
-}
+  );
+};
 
-export default AllSectionConnecter
+export default AllSectionConnecter;

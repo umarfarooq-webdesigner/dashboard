@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import {
   FaHome,
+  FaTools,
   FaUser,
   FaProjectDiagram,
   FaEnvelope,
@@ -47,6 +48,11 @@ const Navbar = () => {
         <li>
           <a href="#home" onClick={toggleMenu}>
             <FaHome className="icon" /> Home
+          </a>
+        </li>
+        <li>
+          <a href="#services" onClick={toggleMenu}>
+            <FaTools className="icon" /> Services
           </a>
         </li>
         <li>

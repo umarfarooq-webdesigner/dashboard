@@ -1,51 +1,55 @@
-*{
+:root {
+  --dark_teal_shade: #006977;
+  --aqua: #00ffff;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+* {
   margin: 0%;
   padding: 0%;
-}
-body{
-  background-color: black;
+  overflow-x: hidden;
 }
 
-/* Apply theme to all links, headings, etc. */
 
-body.light-theme{
-  background-color: white;
+body.light-theme {
+  background-color: var(--white);
 }
+body.dark-theme {
+  background-color: var(--black);
+}
+
 body.light-theme a {
-  color: #006977;
+  color: var(--dark_teal_shade);
 }
 
 body.dark-theme a {
-  color: #ffffff;
+  color: var(--white);
 }
 
 body.dark-theme h1 {
-  color: #00ffff;
+  color: var(--aqua);
 }
 
 body.light-theme h1 {
-  color: #006977;
+  color: var(--dark_teal_shade);
 }
 
-
 body.dark-theme h3 {
-  color: white;
+  color: var(--white);
 }
 
 body.light-theme h3 {
-  color: black;
+  color: var(--black);
 }
 
-
 body.dark-theme p {
-  color: white;
+  color: var(--white);
 }
 
 body.light-theme p {
-  color: black;
+  color: var(--black);
 }
-
-
 
 /* optional */
 body.light-theme .navbar {

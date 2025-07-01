@@ -51,7 +51,7 @@
 .navbar-menu {
   list-style: none;
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
@@ -65,7 +65,7 @@
   transition: 0.3s ease-in-out;
 }
 .navbar-menu li a .icon {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .navbar-menu li a:hover {
   color: var(--clr-accent-hover);

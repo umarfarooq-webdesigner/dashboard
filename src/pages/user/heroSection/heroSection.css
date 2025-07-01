@@ -3,8 +3,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 5%;
+  padding: 3rem 5% 0rem 5%;
   flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.484);
 }
 
 .hero-left {
@@ -34,19 +35,59 @@
   max-width: 500px;
 }
 
-.hero-btn {
-  background: linear-gradient(to right, #d4145a, #6610f2);
-  color: white;
+.neon-btn {
+  position: relative;
+  display: inline-block;
   padding: 0.75rem 2rem;
-  border-radius: 30px;
-  text-decoration: none;
   font-weight: 600;
-  transition: 0.3s ease;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 30px;
+  background: transparent;
+  border: 2px solid transparent;
+  z-index: 0;
+  overflow: hidden;
+  transition: color 0.4s ease, transform 0.3s ease;
 }
 
-.hero-btn:hover {
-  opacity: 0.85;
+.neon-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  padding: 2px; /* border thickness */
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1;
+  animation: borderGlow 4s linear infinite;
 }
+
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.neon-btn:hover {
+  color: #00ffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4), 0 0 30px rgba(255, 0, 255, 0.4);
+}
+
+body.light-theme .neon-btn:hover {
+  color: #d600d6;
+}
+
+
+
 
 .hero-right {
   flex: 1;
@@ -146,14 +187,13 @@ body.light-theme .code-snippet {
   .hero-section {
     flex-direction: column;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 0rem 1rem;
   }
 
   .hero-left,
   .hero-right {
     width: 100%;
     max-width: 100%;
-    padding: 1rem 0;
   }
 
   .hero-left h1 {
@@ -173,20 +213,20 @@ body.light-theme .code-snippet {
     color: #444;
   }
 
-  .hero-btn {
+  .neon-btn {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
   }
 
   .hero-image {
     height: auto;
-    max-height: 50vh;
+    max-height: 65vh;
   }
 
   .code-snippet {
     font-size: 0.85rem;
     line-height: 2rem;
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
   }
 
   .code-background::before,
@@ -210,13 +250,13 @@ body.light-theme .code-snippet {
     font-size: 0.85rem;
   }
 
-  .hero-btn {
-    font-size: 0.8rem;
+  .neon-btn {
+    font-size: 0.7rem;
     padding: 0.5rem 1rem;
   }
 
   .hero-image {
-    max-height: 40vh;
+    max-height: 50vh;
   }
 
   .code-snippet {

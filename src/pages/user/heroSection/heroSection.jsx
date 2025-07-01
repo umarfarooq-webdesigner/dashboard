@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react"; 
-import Navbar from "../../../components/navbar/navbar";
+import React, { useState, useEffect } from "react";
 import "./heroSection.css";
 import {
   umarfarooq_profile_pic2,
   umarfarooq_profile_pic3,
 } from "../../../assets/images/images_index";
+
+import AnimatedTyping from "../../../components/animatedTyping/AnimatedTyping";
 
 const HeroSection = () => {
   const [isLightTheme, setIsLightTheme] = useState(false);
@@ -27,18 +28,28 @@ const HeroSection = () => {
 
   return (
     <>
-      <Navbar />
       <section className="hero-section">
         <div className="hero-left">
           <h1>
             <span>Umar Farooq</span>
           </h1>
-          <h3>SOFTWARE ENGINEER | FULLSTACK DEVELOPER</h3>
+          <h3>
+            <AnimatedTyping
+              texts={[
+                "Full Stack Developer",
+                "Software Engineer",
+                "Graphic Designer",
+                "UI/UX Designer",
+              ]}
+            />
+          </h3>
+
           <p>
-            With impeccable experience from concept to layout, I bring your
-            ideas to life with clean code.
+            Transforming ideas into elegant code and impactful visuals. Blending
+            logic and creativity to build high-performance apps and standout
+            designs that drive results.
           </p>
-          <a href="#projects" className="hero-btn">
+          <a href="#projects" className="neon-btn ">
             Learn more
           </a>
         </div>
