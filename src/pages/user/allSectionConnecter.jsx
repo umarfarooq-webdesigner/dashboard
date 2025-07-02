@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../components/navbar/navbar";
 import HeroSection from "./heroSection/heroSection";
 import ServicesSection from "./serviceSection/ServicesSection";
+import SkillsSection from "./skillsSection/SkillsSection";
 
 const AllSectionConnecter = () => {
   return (
@@ -9,6 +10,7 @@ const AllSectionConnecter = () => {
       <Navbar />
       <HeroSection />
       <ServicesSection />
+      <SkillsSection />
     </div>
   );
 };

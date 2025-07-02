@@ -1,0 +1,85 @@
+:root {
+  --aqua: #00ffff;
+  --dark_teal_shade: #006977;
+  --text-light: #fff;
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --accent: var(--aqua);
+}
+
+body.light-theme {
+  --accent: var(--dark_teal_shade);
+}
+
+body.dark-theme {
+  --accent: var(--aqua);
+}
+
+/* === Skills Section Container === */
+.skills-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  color: var(--text-light);
+}
+
+/* === Centered Skills Content (Narrower, No Glass, No Dots) === */
+.skills-right {
+  width: 100%;
+  max-width: 800px; /* reduced width */
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: transparent; /* no glass */
+}
+
+/* === Title === */
+.skills-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* === Skill Grid === */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 1rem;
+}
+
+/* === Skill Cards === */
+.skill-card {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  font-size: 0.9rem;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 2rem 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .skills-title {
+    font-size: 2rem;
+  }
+
+  .skills-right {
+    padding: 1.5rem;
+  }
+}

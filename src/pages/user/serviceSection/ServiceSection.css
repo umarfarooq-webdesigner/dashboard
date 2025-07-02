@@ -1,20 +1,28 @@
 :root {
-  --accent: #00ffff;
+  /* --accent: #00ffff;  */
   --text-light: #ffffff;
   --text-muted: #cccccc;
 }
 
+
 .services-section {
-  background-color: #0b1120;
   padding: 4rem 2rem;
-  color: var(--text-light);
   position: relative;
+  border-bottom: 1px solid white;
+}
+body.light-theme .services-section{
+    border-bottom: 1px solid black;
 }
 
 .services-title {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
+    color: white;
+}
+
+body.light-theme .services-title {
+  color: black;
 }
 
 .services-wrapper {
@@ -40,59 +48,51 @@
 .service-content {
   border: 1px solid #ffffff;
   border-radius: 12px;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1.5rem;
   max-width: 600px;
   width: 100%;
-  background: transparent;
+ transition: border 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
+
+body.light-theme .service-content {
+  border: 1px solid black;
+}
+
+
+.service-content:hover {
+  border: 1px solid var(--aqua); /* or --aqua if defined */
+}
+
+
 
 .service-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .service-icon {
   font-size: 1.5rem;
-  color: var(--accent);
+  color: var(--aqua);
+  flex-shrink: 0;
 }
 
 .service-title {
   font-size: 1.5rem;
   margin: 0;
+  color: var(--text-light);
 }
 
 .service-description {
   font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.6;
+  margin-top: 0.5rem;
 }
 
-/* Connecting vertical line */
-.vertical-line1 {
-  position: absolute;
-  top: 25.5%;
-  left: 50%;
-  width: 2px;
-  height: 11.5%;
-  background: white;
-  transform: translateX(-50%);
-  z-index: 1;
-}
 
-.vertical-line2 {
-  position: absolute;
-  top: 63%;
-  left: 50%;
-  width: 2px;
-  height: 11.5%;
-  background: white;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .service-box,
   .service-box.right {
@@ -101,9 +101,14 @@
 
   .service-content {
     text-align: center;
+    padding: 1.2rem 1rem;
   }
 
-  .vertical-line1, .vertical-line2 {
-    display: none;
-}
+  .service-title {
+    font-size: 1.2rem;
+  }
+
+  .service-description {
+    font-size: 0.95rem;
+  }
 }

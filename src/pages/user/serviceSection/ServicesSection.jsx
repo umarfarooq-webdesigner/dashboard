@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCode, FaPencilRuler, FaWordpress } from "react-icons/fa";
+import { FaCode, FaPencilRuler, FaPaintBrush, FaObjectGroup  } from "react-icons/fa";
 import "./ServiceSection.css";
 
 const servicesData = [
@@ -17,13 +17,21 @@ const servicesData = [
       "I can design your website from scratch. I create modern, simple, and user-friendly designs that match your brand and goals.",
     position: "right",
   },
-  {
-    icon: <FaWordpress />,
-    title: "WordPress Development",
-    description:
-      "I build websites on WordPress, making them easy to update and manage. It's a great choice for blogs, small businesses, or portfolios.",
-    position: "left",
-  },
+{
+  icon: <FaPaintBrush />, 
+  title: "Graphic Design",
+  description:
+    "I create modern and visually appealing designs including logos, posters, banners, and brand identity materials tailored to your business needs.",
+  position: "left",
+},
+{
+  icon: <FaObjectGroup />, 
+  title: "UI/UX Design",
+  description:
+    "I design intuitive and user-friendly interfaces that enhance user experience across web and mobile platforms — focusing on usability, accessibility, and modern aesthetics.",
+  position: "right",
+}
+
 ];
 
 const ServicesSection = () => {
@@ -45,9 +53,6 @@ const ServicesSection = () => {
             </div>
           </div>
         ))}
-        {/* Vertical line */}
-        <div className="vertical-line1"></div>
-        <div className="vertical-line2"></div>
       </div>
     </section>
   );
